@@ -1,0 +1,48 @@
+<%- include('../../header.ejs') %>
+
+    <!-- middle section -->
+
+
+    <div class="container">
+
+        <!-- sidebar start -->
+
+        <div class="container mt-4 mb-4">
+            <h2 class="mb-4">Admin Dashboard</h2>
+            <div class="container row">
+
+                <div class="vstack gap-2 col-md-3">
+                    <a href="/admin/dashboard" type="button" class="btn btn-outline-secondary">Dashboard</a>
+                    <a href="/admin/blogdisplay" type="button" class="btn btn-outline-secondary">Blogs</a>
+                    <a href="/admin/categorydisplay" type="button" class="btn btn-outline-secondary">Categories</a>
+                    <a href="/about" type="button" class="btn btn-outline-secondary">About</a>
+                    <a href="/admin/contactdisplay" type="button" class="btn btn-outline-secondary">Contacts</a>
+                    <a href="/logout" type="button" class="btn btn-outline-secondary">Logout</a>
+                </div>
+
+                <!-- sidebar end -->
+
+                <!-- style="justify-content: end;font-size: 20px;font-weight: 500; " -->
+                <div class="col-md-9 ml-4">
+                    <div class="container mb-4">
+                        <span style="font-size: 30px;font-weight: 600; " class="mr-4"> Category Update</span>
+                        
+                    </div>
+
+                    <form action="/categoryupdate/<%= edit._id %>" method="post">
+                        <div class="mb-3">
+                            <label for="">Category name</label>
+                            <input type="text" class="form-control" value="<%= edit.cat_name %>" name="cat_name">
+                        </div>
+                      
+                        <button type="submit" class="btn btn-primary">Update</button>
+                    </form>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+
+<%- include('../../footer.ejs') %>

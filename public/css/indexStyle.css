@@ -1,0 +1,10 @@
+.ourblogs{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    margin:30px auto;
+}
+
+.columnhover:hover{
+    background-color:brown;
+}

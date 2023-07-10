@@ -1,0 +1,39 @@
+<%- include('../header') %>
+
+
+    <!-- middle section -->
+
+
+    <div class="container">
+
+        <!-- sidebar start -->
+
+        <div class="container mt-4 mb-4">
+            <h2 class="mb-4">Admin Dashboard</h2>
+            <div class="container row">
+
+                <div class="vstack gap-2 col-md-3">
+                    <a href="/admin/dashboard" type="button" class="btn btn-outline-secondary">Dashboard</a>
+                    <a href="/admin/blogdisplay" type="button" class="btn btn-outline-secondary">Blogs</a>
+                    <a href="/admin/categorydisplay" type="button" class="btn btn-outline-secondary">Categories</a>
+                    <a href="/about" type="button" class="btn btn-outline-secondary">About</a>
+                    <a href="/admin/contactdisplay" type="button" class="btn btn-outline-secondary">Contacts</a>
+                    <a href="/logout" type="button" class="btn btn-outline-secondary">Logout</a>
+                </div>
+
+                <!-- sidebar end -->
+
+                <div class="col-md-9 ml-4">
+                    <h2>Welcome , <%= n %>
+                    </h2>
+                    <h3>Your Email :- , <%= e %>
+                    </h3><br>
+                    <p>We are thrilled to have you here and we are excited for the journey ahead. This dashboard is your central hub for managing and customizing your blogs . Where you can unleash your creativity and share your unique voice with the world .</p>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <%- include('../footer') %>

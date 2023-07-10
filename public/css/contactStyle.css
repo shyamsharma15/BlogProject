@@ -1,0 +1,30 @@
+.contactcontainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin:20px auto;
+    /* border:2px solid red; */
+
+    
+}
+
+.contactheading{
+    text-align: center;
+}
+
+/* .contactform{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} */
+.contactform input{
+    border:1px solid gray;
+}
+
+.contactform button{
+   display:flex;
+   align-items:center;
+}
+.contactform form textarea{
+    border:1px solid grey;
+}

@@ -1,0 +1,96 @@
+<%- include('../../header.ejs') %>
+
+    <!-- middle section -->
+
+
+    <div class="container">
+
+        <!-- sidebar start -->
+
+        <div class="container mt-4 mb-4">
+            <h2 class="mb-4">Admin Dashboard</h2>
+            <div class="container row">
+
+                <div class="vstack gap-2 col-md-3">
+                    <a href="/admin/dashboard" type="button" class="btn btn-outline-secondary">Dashboard</a>
+                    <a href="/admin/blogdisplay" type="button" class="btn btn-outline-secondary">Blogs</a>
+                    <a href="/admin/categorydisplay" type="button" class="btn btn-outline-secondary">Categories</a>
+                    <a href="/about" type="button" class="btn btn-outline-secondary">About</a>
+                    <a href="/admin/contactdisplay" type="button" class="btn btn-outline-secondary">Contacts</a>
+                    <a href="/logout" type="button" class="btn btn-outline-secondary">Logout</a>
+                </div>
+
+                <!-- sidebar end -->
+
+                <!-- style="justify-content: end;font-size: 20px;font-weight: 500; " -->
+                <div class="col-md-9 ml-4">
+                    <div class="container mb-4">
+                        <span style="font-size: 30px;font-weight: 600; " class="mr-4"> Blog Update</span>
+
+                    </div>
+
+                    <form action="/blogupdate/<%= edit._id %>" method="post" enctype="multipart/form-data">
+                        <div class="mb-3">
+                            <label for="">Title</label>
+                            <input type="text" class="form-control" value="<%= edit.title %>" name="title">
+                        </div>
+                        <div class="mb-3">
+                            <label for="">Description</label>
+                            <textarea type="text" class="form-control"
+                                name="description"><%= edit.description %></textarea>
+                        </div>
+                        <div class="md-3">
+                            <label for="">Upload image</label>
+                            <input name="image" type="file" class="form-control" required="">
+                        </div><br>
+                        <div class="mb-3">
+                            <img src="<%= edit.image.url %>" width="130px" alt="">
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-lg">Update</button><br>
+                    </form>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <!-- modal for create blog -->
+
+    <!-- Button trigger modal -->
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Add Blog</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="/insertblog" method="post">
+                        <div class="md-3">
+                            <label for="">Title</label>
+                            <input name="title" type="text" class="form-control">
+                        </div>
+                        <div class="md-3">
+                            <label for="">Description</label>
+                            <textarea name="description" type="text" class="form-control"></textarea>
+                        </div>
+
+
+
+                        <button type="submit" class="btn btn-primary">Add Blog</button>
+
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <%- include('../../footer.ejs') %>

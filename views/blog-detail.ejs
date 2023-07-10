@@ -1,0 +1,80 @@
+<%- include('header') %>
+
+
+    <!-- <div class="container"> -->
+
+    <div class="container text-center mb-4">
+        <h1 class="my-4">Blog Details</h1>
+        <div class="row">
+            <div class="col-lg-7 col-sm-5 col-md-6">
+                <div class="card shadow-sm">
+
+                    <img class="img" width="100%" height="250" src="<%= b.image.url %>" alt="">
+
+                    <div class="card-body">
+                        <h3>
+                            <%= b.title %>
+                        </h3>
+                        <p class="card-text">
+                            <%= b.description %>
+                        </p>
+                        <div class="d-flex justify-content-between align-items-center">
+
+                            <span>Blog is Added on :</span>
+
+
+                            <small class="text-body-secondary"><span>
+                                    <%= b.createdAt.toLocaleDateString() %>
+                                </span></small>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- "col-sm-5 offset-sm-2 col-md-6 offset-md-0" -->
+            <div class="col-lg-5 col-sm-5 col-md-6">
+                <h5 class="bg-dark text-white py-2 px-3">Recent Blogs</h5>
+                <div class="row gy-1">
+                    <% r.forEach((recentitem)=>{ %>
+                        <div class="col-lg-4">
+                            <img src="<%= recentitem.image.url %>" width="100%" alt="">
+                        </div>
+                        <div class="col-lg-8">
+                            <h5>
+                                <%= recentitem.title %>
+                            </h5>
+                            <p>
+                                <%= recentitem.createdAt.toLocaleDateString() %>
+                            </p>
+                        </div>
+                        <% }) %>
+
+                </div>
+                <h5 class="bg-dark text-white py-2 px-3 mt-3">Categories</h5>
+                <div class="row gy-1">
+                    <% c.forEach((categoryitem)=>{ %>
+                        <div>
+
+                            <h5><a href="" class="text-decoration-none"><%= categoryitem.cat_name %></a></h5>
+                         
+                        </div>
+                        <% }) %>
+
+                </div>
+
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- </div> -->
+
+
+
+
+
+
+
+
+    <%- include('footer') %>

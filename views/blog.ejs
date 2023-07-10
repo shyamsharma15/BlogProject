@@ -1,0 +1,55 @@
+<%- include('header') %>
+
+    <!-- middle section  -->
+
+
+    <div class="container mb-4">
+        <div class="blogheading">
+            <h2>Our Blogs</h2>
+        </div>
+
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+
+            <% b.forEach((blogitem)=>{ %>
+
+
+                <div class="col">
+                    <div class="card shadow-sm">
+
+                        <img class="bd-placeholder-img" width="100%" height="250" src="<%= blogitem.image.url %>"
+                            alt="">
+
+                        <div class="card-body">
+                            <h5>
+                                <%= blogitem.title %>
+                            </h5>
+                            <p class="card-text">
+                                <%= blogitem.description.slice(0,60) %>
+                            </p>
+
+                            <div class="d-flex justify-content-between align-items-center">
+
+                                <a href="/blog-detail/<%= blogitem._id %>" type="button"
+                                    class="btn btn-sm btn-outline-secondary">Read more</a>
+
+
+                                <small class="text-body-secondary">
+                                    <%= blogitem.createdAt.toLocaleDateString() %>
+                                </small>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+
+                <% }) %>
+
+
+
+        </div>
+
+
+    </div>
+
+    <%- include('footer') %>

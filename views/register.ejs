@@ -1,0 +1,46 @@
+<%- include('header') %>
+
+    <div class="container d-flex align-items-center justify-content-center mt-4 mb-4">
+
+        <form action="/adminregister" enctype="multipart/form-data" method="post">
+            <div class="form-group">
+                <h3 class="text-center">Register</h3>
+            </div>
+            <% if(message.length > 0){ %>
+                <div class="alert alert-danger">
+                    <%= message %>
+                </div>
+                <% } %>
+            <div class="form-group">
+                <input type="text" placeholder="Name" name="name"  class="form-control mt-3">
+            </div>
+            <div class="form-group">
+                <input type="email"  placeholder="Email" name="email" class="form-control mt-3" >
+            </div>
+            <div class="form-group">
+                <input type="password"  placeholder="Password" id="myInput1" name="password"
+                    class="form-control mt-3">
+            </div>
+            <div class="form-group">
+                <input type="password"  placeholder="Confirm Password" id="myInput"
+                    name="confirm_password" class="form-control mt-3" >
+            </div><br>
+            <input type="checkbox">
+            <span>&nbsp;Show Password</span>
+            <!-- <div class="form-group">
+                <input type="file" id="myInput" name="image" class="form-control mt-3" required="">
+            </div> -->
+            <div class="form-group text-center">
+                <button type="submit" class="btn btn-info mt-3 form-control mb-3 register"
+                    style="background: #12587a; color: #ffff">
+                    Register</button>
+                <span class=" text-center pt-3 ">
+                    "HAVE AN ACCOUNT?"
+                    <a href="/login" class="b">LOGIN NOW</a>
+                </span>
+            </div>
+        </form>
+
+    </div>
+
+    <%- include('footer') %>
